@@ -381,3 +381,66 @@
   line-height: 24px;
   color: #d5c4ab;
 }
+
+/* ── Core Values Section ── */
+
+.values {
+  position: relative;
+  background-color: #1a1c1c;
+  border-top: 1px solid rgba(81, 69, 50, 0.2);
+  border-bottom: 1px solid rgba(81, 69, 50, 0.2);
+  padding: 120px 0 121px;
+  overflow: hidden;
+}
+
+.values::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 30%;
+  height: 640px;
+  background-color: rgba(255, 220, 161, 0.05);
+  filter: blur(75px);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.values__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.values__card {
+  position: relative;
+  background-color: #121414;
+  border: 1px solid rgba(81, 69, 50, 0.3);
+  border-radius: 8px;
+  padding: 33px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.values__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #514532;
+}

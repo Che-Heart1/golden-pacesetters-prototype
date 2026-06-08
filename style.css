@@ -1365,6 +1365,74 @@
   }
 }
 
+/* ── Active nav link ── */
+.topnav__link--active {
+  color: #ffb800;
+}
+
+/* ── Form validation ── */
+.contact__field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact__error {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #e05555;
+  display: none;
+}
+
+.contact__error--visible {
+  display: block;
+}
+
+.contact__field--invalid {
+  border-color: #e05555;
+}
+
+/* ── Scroll-to-top button ── */
+.scroll-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffb800;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  background-color: #ffc933;
+  transform: translateY(-3px);
+}
+
+.scroll-top__arrow {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid #0a0a0a;
+  display: block;
+  margin-top: -2px;
+}
+
 /* ── Tablet (iPad Air and similar, 769px – 1024px) ── */
 @media (min-width: 769px) and (max-width: 1024px) {
 

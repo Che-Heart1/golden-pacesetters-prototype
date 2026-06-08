@@ -283,35 +283,51 @@
 
         <!-- Right: form -->
         <form class="contact__form" id="contact-form" novalidate>
-          <input
-            type="text"
-            name="name"
-            class="contact__field"
-            placeholder="Enter Name"
-            required
-            autocomplete="name"
-          >
-          <input
-            type="email"
-            name="email"
-            class="contact__field"
-            placeholder="Enter Email"
-            required
-            autocomplete="email"
-          >
-          <input
-            type="tel"
-            name="phone"
-            class="contact__field"
-            placeholder="Enter Phone Number"
-            autocomplete="tel"
-          >
-          <textarea
-            name="message"
-            class="contact__field contact__field--textarea"
-            placeholder="How can we accelerate your goals?"
-            required
-          ></textarea>
+          <div class="contact__field-wrap">
+            <input
+              type="text"
+              name="name"
+              id="field-name"
+              class="contact__field"
+              placeholder="Enter Name"
+              required
+              autocomplete="name"
+            >
+            <p class="contact__error" id="error-name" aria-live="polite"></p>
+          </div>
+          <div class="contact__field-wrap">
+            <input
+              type="email"
+              name="email"
+              id="field-email"
+              class="contact__field"
+              placeholder="Enter Email"
+              required
+              autocomplete="email"
+            >
+            <p class="contact__error" id="error-email" aria-live="polite"></p>
+          </div>
+          <div class="contact__field-wrap">
+            <input
+              type="tel"
+              name="phone"
+              id="field-phone"
+              class="contact__field"
+              placeholder="Enter Phone Number"
+              autocomplete="tel"
+            >
+            <p class="contact__error" id="error-phone" aria-live="polite"></p>
+          </div>
+          <div class="contact__field-wrap">
+            <textarea
+              name="message"
+              id="field-message"
+              class="contact__field contact__field--textarea"
+              placeholder="How can we accelerate your goals?"
+              required
+            ></textarea>
+            <p class="contact__error" id="error-message" aria-live="polite"></p>
+          </div>
           <button type="submit" class="contact__submit">Initiate Contact</button>
           <p class="contact__msg" id="contact-msg" aria-live="polite"></p>
         </form>
@@ -332,6 +348,10 @@
     </nav>
     <p class="footer__copy">&#169; 2026 Golden Pacesetters. Setting the Standard. Raising the Pace.</p>
   </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top">
+    <span class="scroll-top__arrow" aria-hidden="true"></span>
+  </button>
 
   <script src="script.js"></script>
 </body>

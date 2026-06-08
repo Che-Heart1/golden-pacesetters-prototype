@@ -1220,3 +1220,243 @@
     line-height: 26px;
   }
 }
+
+/* ── Animations & Transitions ── */
+
+/* Parallax: extend bg so translateY doesn't expose edges */
+.hero {
+  overflow: hidden;
+}
+
+.hero__bg {
+  top: -40%;
+  height: 180%;
+  will-change: transform;
+}
+
+/* Hero entrance — elements start hidden, revealed when .hero--ready is added by JS */
+.hero__headline,
+.hero__buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero__subtext {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.hero--ready .hero__headline {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.hero--ready .hero__subtext {
+  opacity: 1;
+  transition-delay: 0.9s;
+}
+
+.hero--ready .hero__buttons {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.2s;
+}
+
+/* Scroll fade-in keyframes */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeftIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRightIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Scroll animation initial states */
+.anim-fade-up,
+.anim-fade-left,
+.anim-fade-right {
+  opacity: 0;
+}
+
+.anim-fade-up.is-visible {
+  animation: fadeUpIn 0.6s ease forwards;
+}
+
+.anim-fade-left.is-visible {
+  animation: fadeLeftIn 0.7s ease forwards;
+}
+
+.anim-fade-right.is-visible {
+  animation: fadeRightIn 0.7s ease forwards;
+}
+
+/* Card hover lift */
+.offer__card,
+.values__card,
+.proj__card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer__card:hover,
+.values__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.proj__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Reduced motion: disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  .hero__headline,
+  .hero__subtext,
+  .hero__buttons {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .anim-fade-up,
+  .anim-fade-left,
+  .anim-fade-right {
+    opacity: 1;
+  }
+
+  .anim-fade-up.is-visible,
+  .anim-fade-left.is-visible,
+  .anim-fade-right.is-visible {
+    animation: none;
+  }
+
+  .hero__bg {
+    will-change: auto;
+  }
+}
+
+/* ── Short viewport (Nest Hub, landscape tablets at 600–700px height) ── */
+/* Applies to desktop-width screens only; mobile has its own hero overrides. */
+@media (max-height: 700px) and (min-width: 769px) {
+  .hero__content {
+    padding-top: 90px;
+  }
+
+  .hero__headline {
+    font-size: 68px;
+    line-height: 78px;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero__subtext {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+/* ── Tablet (iPad Air and similar, 769px – 1024px) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Nav: tighten inner padding */
+  .topnav__inner {
+    padding: 0 40px;
+  }
+
+  /* Hero */
+  .hero__content {
+    padding-top: 160px;
+  }
+
+  .hero__headline {
+    font-size: 80px;
+    line-height: 90px;
+  }
+
+  /* Mission & Vision */
+  .mv {
+    padding: 80px 0;
+  }
+
+  .mv__container {
+    padding: 0 40px;
+    gap: 80px;
+  }
+
+  /* What We Offer */
+  .offer {
+    padding: 80px 0;
+  }
+
+  .offer__container {
+    padding: 0 40px;
+    gap: 48px;
+  }
+
+  .offer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Core Values */
+  .values {
+    padding: 80px 0;
+  }
+
+  .values__container {
+    padding: 0 40px;
+    gap: 48px;
+  }
+
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Featured Projects */
+  .projects {
+    padding: 80px 0;
+  }
+
+  .projects__container {
+    padding: 0 40px;
+    gap: 48px;
+  }
+
+  /* Contact: stack panels */
+  .contact {
+    padding: 80px 40px;
+  }
+
+  .contact__card {
+    padding: 48px 40px;
+  }
+
+  .contact__card-body {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact__left {
+    flex: none;
+    width: 100%;
+  }
+
+  .contact__form {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 80px 40px;
+  }
+}

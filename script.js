@@ -1,3 +1,81 @@
+// 1 — Hero entrance
+(function () {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      hero.classList.add('hero--ready');
+    });
+  });
+}());
+
+// 2 — Scroll fade-in (IntersectionObserver)
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  // Section header blocks (Offer / Values / Projects all use .offer__header)
+  document.querySelectorAll('.offer__header').forEach(function (el) {
+    el.classList.add('anim-fade-up');
+    observer.observe(el);
+  });
+
+  // Mission & Vision rows: text slides in from left, image from right
+  document.querySelectorAll('.mv__row').forEach(function (row) {
+    var text = row.querySelector('.mv__text');
+    var card = row.querySelector('.mv__card');
+    if (text) { text.classList.add('anim-fade-left');  observer.observe(text); }
+    if (card) { card.classList.add('anim-fade-right'); observer.observe(card); }
+  });
+
+  // Service cards — staggered 100 ms apart
+  document.querySelectorAll('.offer__card').forEach(function (el, i) {
+    el.classList.add('anim-fade-up');
+    el.style.animationDelay = (i * 100) + 'ms';
+    observer.observe(el);
+  });
+
+  // Value cards — staggered 100 ms apart
+  document.querySelectorAll('.values__card').forEach(function (el, i) {
+    el.classList.add('anim-fade-up');
+    el.style.animationDelay = (i * 100) + 'ms';
+    observer.observe(el);
+  });
+
+  // Project cards — staggered 100 ms apart
+  document.querySelectorAll('.proj__card').forEach(function (el, i) {
+    el.classList.add('anim-fade-up');
+    el.style.animationDelay = (i * 100) + 'ms';
+    observer.observe(el);
+  });
+
+  // Contact card
+  document.querySelectorAll('.contact__card').forEach(function (el) {
+    el.classList.add('anim-fade-up');
+    observer.observe(el);
+  });
+}());
+
+// 3 — Parallax hero background (desktop only)
+(function () {
+  if (window.innerWidth <= 768) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var bg = document.querySelector('.hero__bg');
+  if (!bg) return;
+  window.addEventListener('scroll', function () {
+    bg.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)';
+  }, { passive: true });
+}());
+
+// 4 — Topnav scroll state
 (function () {
   var nav = document.getElementById('topnav');
 

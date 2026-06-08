@@ -1,0 +1,102 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── TopNavBar ── */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topnav.scrolled {
+  background-color: rgba(18, 20, 20, 0.96);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+.topnav__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+.topnav__logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.topnav__logo {
+  height: 44px;
+  width: auto;
+}
+
+/* Nav links + CTA */
+
+.topnav__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.topnav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.topnav__link {
+  color: #e2e2e2;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.topnav__link:hover {
+  color: #ffb800;
+}
+
+/* CTA button */
+
+.topnav__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #ffb800;
+  color: #6b4c00;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  border-radius: 2px;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 7.5px rgba(255, 184, 0, 0.2));
+  transition: background-color 0.2s ease, filter 0.2s ease;
+}
+
+.topnav__cta:hover {
+  background-color: #ffc933;
+  filter: drop-shadow(0 0 14px rgba(255, 184, 0, 0.55));
+}

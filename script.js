@@ -2,6 +2,8 @@
 (function () {
   var hero = document.querySelector('.hero');
   if (!hero) return;
+  // Two rAF calls guarantee the browser has painted opacity:0 before the
+  // class is added — one rAF can fire before the first paint commits.
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
       hero.classList.add('hero--ready');
@@ -36,7 +38,9 @@
     if (card) { card.classList.add('anim-fade-right'); observer.observe(card); }
   });
 
-  // Service cards — staggered 100 ms apart
+  // Service cards — staggered 100 ms apart.
+  // animationDelay is set as an inline style so it overrides the implicit
+  // animation-delay:0s that the .is-visible animation shorthand would apply.
   document.querySelectorAll('.offer__card').forEach(function (el, i) {
     el.classList.add('anim-fade-up');
     el.style.animationDelay = (i * 100) + 'ms';
@@ -70,6 +74,8 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var bg = document.querySelector('.hero__bg');
   if (!bg) return;
+  // 0.4 = 40% scroll speed. The bg is set to top:-40%/height:180% in CSS so
+  // translateY never exposes a bare edge at any scroll depth on a normal page.
   window.addEventListener('scroll', function () {
     bg.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)';
   }, { passive: true });
@@ -111,6 +117,8 @@
   var nav = document.getElementById('topnav');
   var navH = nav ? nav.getBoundingClientRect().height : 80;
 
+  // rootMargin clips the top by nav height and the bottom by 60%, so only the
+  // section occupying the upper 40% of the visible viewport triggers isIntersecting.
   var sectionObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {

@@ -672,6 +672,14 @@
   color: #d5c4ab;
 }
 
+.contact__email {
+  text-decoration: none;
+}
+
+.contact__email:hover {
+  text-decoration: underline;
+}
+
 .contact__form {
   flex: 0 0 325px;
   display: flex;
@@ -684,7 +692,7 @@
   height: 52px;
   background: transparent;
   border: 1px solid #ffb800;
-  border-radius: 0;
+  border-radius: 6px;
   padding: 0 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;

@@ -10,6 +10,28 @@
 }());
 
 (function () {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function () {
+    var isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    menu.setAttribute('aria-hidden', String(!isOpen));
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      btn.textContent = '☰';
+    });
+  });
+}());
+
+(function () {
   var form = document.getElementById('contact-form');
   var msg  = document.getElementById('contact-msg');
   if (!form) return;

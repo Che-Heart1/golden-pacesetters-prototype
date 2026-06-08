@@ -907,3 +907,316 @@
   color: #ffb800;
   text-decoration: underline;
 }
+
+/* ── Hamburger (hidden on desktop) ── */
+
+.topnav__hamburger {
+  display: none;
+}
+
+.topnav__mobile-menu {
+  display: none;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+
+  /* Nav */
+  .topnav__inner {
+    padding: 0 20px;
+  }
+
+  .topnav__nav {
+    display: none;
+  }
+
+  .topnav__hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #e2e2e2;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .topnav__mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000000;
+    border-top: 1px solid rgba(81, 69, 50, 0.3);
+    padding: 8px 20px 24px;
+  }
+
+  .topnav__mobile-menu.open {
+    display: flex;
+  }
+
+  .topnav__mobile-link {
+    display: block;
+    color: #e2e2e2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(81, 69, 50, 0.15);
+    transition: color 0.2s ease;
+  }
+
+  .topnav__mobile-link:hover {
+    color: #ffb800;
+  }
+
+  .topnav__mobile-cta {
+    display: block;
+    margin-top: 20px;
+    padding: 14px 24px;
+    background-color: #ffb800;
+    color: #6b4c00;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    border-radius: 2px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .topnav__mobile-cta:hover {
+    background-color: #ffc933;
+  }
+
+  /* Hero */
+  .hero__content {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero__headline {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero__subtext {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
+
+  .hero__subtext br {
+    display: none;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .hero__btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Mission & Vision */
+  .mv {
+    padding: 64px 0;
+  }
+
+  .mv__container {
+    padding: 0 20px;
+    gap: 56px;
+  }
+
+  .mv__row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Mission row: text first, card second — swap so image is on top */
+  .mv__row:first-child .mv__card {
+    order: -1;
+  }
+
+  .mv__card {
+    height: 220px;
+  }
+
+  .mv__text--bordered {
+    border-left: none;
+    padding-left: 0;
+    border-top: 2px solid rgba(81, 69, 50, 0.3);
+    padding-top: 24px;
+  }
+
+  .mv__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .mv__body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* What We Offer */
+  .offer {
+    padding: 64px 0;
+  }
+
+  .offer__container {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .offer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .offer__subtext {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .offer__card-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  /* Core Values */
+  .values {
+    padding: 64px 0;
+  }
+
+  .values__container {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Featured Projects */
+  .projects {
+    padding: 64px 0;
+  }
+
+  .projects__container {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proj__card--large {
+    grid-row: auto;
+  }
+
+  .proj__card--large .proj__img {
+    height: 260px;
+  }
+
+  .proj__card--small .proj__img {
+    height: 220px;
+  }
+
+  .proj__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .proj__content--large {
+    padding: 24px;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 64px 20px;
+  }
+
+  .contact__card {
+    padding: 40px 24px;
+  }
+
+  .contact__card-body {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact__left {
+    flex: none;
+    width: 100%;
+  }
+
+  .contact__form {
+    flex: none;
+    width: 100%;
+  }
+
+  .contact__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .contact__desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 64px 20px;
+  }
+
+  .footer__brand {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    margin-bottom: 16px;
+  }
+
+  .footer__copy {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Privacy Policy */
+  .policy {
+    padding: 120px 0 64px;
+  }
+
+  .policy__h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .policy__text,
+  .policy__list li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

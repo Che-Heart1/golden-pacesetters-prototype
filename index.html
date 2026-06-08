@@ -244,6 +244,67 @@
     </div>
   </section>
 
+  <section class="contact" id="contact">
+    <div class="contact__card">
+      <div class="contact__card-body">
+
+        <!-- Left: info -->
+        <div class="contact__left">
+          <h2 class="contact__heading">
+            <span class="contact__heading-white">Ready to</span>
+            <span class="contact__heading-green">Start?</span>
+          </h2>
+          <p class="contact__desc">
+            Join the engine of progress. Connect with us to accelerate your operational velocity today.
+          </p>
+          <div class="contact__info">
+            <div class="contact__info-row">
+              <svg class="contact__icon" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8C0 13.25 8 20 8 20C8 20 16 13.25 16 8C16 3.58 12.42 0 8 0ZM8 10.5C6.62 10.5 5.5 9.38 5.5 8C5.5 6.62 6.62 5.5 8 5.5C9.38 5.5 10.5 6.62 10.5 8C10.5 9.38 9.38 10.5 8 10.5Z" fill="#0DA152"/>
+              </svg>
+              <span class="contact__info-text">Accra, Ghana</span>
+            </div>
+            <div class="contact__info-row">
+              <svg class="contact__icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 0H2C0.9 0 0 0.9 0 2V14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="#0DA152"/>
+              </svg>
+              <span class="contact__info-text">goldenpacesseters@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <form class="contact__form" id="contact-form" novalidate>
+          <input
+            type="text"
+            name="name"
+            class="contact__field"
+            placeholder="Enter Name"
+            required
+            autocomplete="name"
+          >
+          <input
+            type="email"
+            name="email"
+            class="contact__field"
+            placeholder="Enter Email"
+            required
+            autocomplete="email"
+          >
+          <textarea
+            name="message"
+            class="contact__field contact__field--textarea"
+            placeholder="How can we accelerate your goals?"
+            required
+          ></textarea>
+          <button type="submit" class="contact__submit">Initiate Contact</button>
+          <p class="contact__msg" id="contact-msg" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>

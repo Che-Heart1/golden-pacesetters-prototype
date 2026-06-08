@@ -578,3 +578,173 @@
   line-height: 20px;
   max-width: none;
 }
+
+/* ── Lead Gen / Contact Section ── */
+
+.contact {
+  background-color: #121414;
+  padding: 120px 192px;
+}
+
+.contact__card {
+  position: relative;
+  background-color: #282a2b;
+  border: 1px solid rgba(81, 69, 50, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 64px 65px 65px;
+  overflow: hidden;
+}
+
+.contact__card::before {
+  content: '';
+  position: absolute;
+  top: -128px;
+  right: -128px;
+  width: 256px;
+  height: 256px;
+  background-color: rgba(255, 220, 161, 0.1);
+  filter: blur(40px);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.contact__card-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contact__left {
+  flex: 0 0 359px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact__heading {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 57.6px;
+}
+
+.contact__heading-white {
+  color: #e2e2e2;
+}
+
+.contact__heading-green {
+  color: #0da152;
+}
+
+.contact__desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #d5c4ab;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 17px;
+}
+
+.contact__info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact__icon {
+  flex-shrink: 0;
+}
+
+.contact__info-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d5c4ab;
+}
+
+.contact__form {
+  flex: 0 0 325px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact__field {
+  width: 100%;
+  height: 52px;
+  background: transparent;
+  border: 1px solid #ffb800;
+  border-radius: 0;
+  padding: 0 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e2e2e2;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.contact__field::placeholder {
+  color: rgba(213, 196, 171, 0.73);
+}
+
+.contact__field:focus {
+  border-color: #ffc933;
+}
+
+.contact__field--textarea {
+  height: 150px;
+  padding: 14px 24px;
+  resize: vertical;
+}
+
+.contact__submit {
+  width: 100%;
+  height: 52px;
+  background-color: #ffb800;
+  color: #121414;
+  border: none;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact__submit:hover {
+  background-color: #ffc933;
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact__msg {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 0;
+  margin: 0;
+}
+
+.contact__msg--success {
+  color: #0da152;
+}
+
+.contact__msg--error {
+  color: #e05555;
+}
